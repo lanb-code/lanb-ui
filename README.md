@@ -4,6 +4,8 @@ FE common components &amp;&amp; base on Vue.js
 
 > A interactively, selectable, UI framework lanb-ui
 
+[中文文档](./README-zh.md)
+
 ## Features
 
 ### Interactively
