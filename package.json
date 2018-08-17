@@ -14,9 +14,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "calendar-months": "^1.0.1",
+    "date-formatter": "^0.1.1",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "jquery": "^3.3.1"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
