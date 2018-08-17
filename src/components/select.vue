@@ -24,16 +24,15 @@ export default {
   },
   methods: {
     loadData () {
-      var self = this
       /* eslint-disable */
       $.ajax({
         url: this.url,
         type: 'get',
         dataType: 'json',
-        success (result) {
-          if (typeof result.rows !== 'undefined') self.data = result.rows
-          else self.data = result
-          self.ok = true
+        success: (result) => {
+          if (typeof result.rows !== 'undefined') this.data = result.rows
+          else this.data = result
+          this.ok = true
         },
         error: function (result) {}
       })

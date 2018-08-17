@@ -179,21 +179,18 @@ export default {
 
     // 加载数据
     loadData() {
-      var self = this;
-      self.$emit('update:ok', false);
+      this.$emit('update:ok', false);
       /* eslint-disable */
       $.ajax({
         url: this.url,
         type: 'get',
-        data: self.pageInfo,
+        data: this.pageInfo,
         dataType: 'json',
-        success: function(result) {
-          console.log(data)
+        success: (result) =>  {
           var data = result.rows || result
-          console.log(data)
-          self.$emit('update:data', data)
-          self.$emit('update:ok', true)
-          self.total = result.total || 0
+          this.$emit('update:data', data)
+          this.$emit('update:ok', true)
+          this.total = result.total || 0
         },
         error: function(result) {
         }
