@@ -2,7 +2,7 @@
   <select class="tup-select">
     <template v-if="ok">
       <option value="">{{tip}}</option>
-      <option :key="col" v-for="col in data" :value="getValue(col)">{{getName(col)}}</option>
+      <option :key="getValue(col)" v-for="col in data" :value="getValue(col)">{{getName(col)}}</option>
     </template>
   </select>
 </template>

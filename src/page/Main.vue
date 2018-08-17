@@ -16,6 +16,9 @@
             <li>
                 <router-link to="/ibutton">按钮</router-link>
             </li>
+            <li>
+                <router-link to="/idatetime">时间组件</router-link>
+            </li>
         </ul>
     </div>
 </template>

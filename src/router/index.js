@@ -5,6 +5,7 @@ import Select from '@/page/Select'
 import Dialog from '@/page/Dialog'
 import Autocomplete from '@/page/Autocomplete'
 import Button from '@/page/Button'
+import Datetime from '@/page/Datetime'
 import Main from '@/page/Main'
 
 Vue.use(Router)
@@ -37,6 +38,11 @@ export default new Router({
       path: '/ibutton',
       name: 'Button',
       component: Button
+    },
+    {
+      path: '/idatetime',
+      name: 'Datetime',
+      component: Datetime
     }
   ]
 })
