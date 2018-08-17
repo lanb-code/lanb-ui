@@ -2,9 +2,9 @@
     <div>
         <input type="text" class="tup-input" v-model="day" @click="click" />
         <div class="__datetime" v-if="show">
-            <div class="__datetime_title">{{month.year}}&nbsp;{{month.month + 1}}</div>
-            <div class="__datetime_body">
-                <table class="tup-table">
+            <div class="__datetime_title" ref="__datetime_title">{{month.year}}&nbsp;{{month.month + 1}}</div>
+            <div class="__datetime_body" ref="__datetime_body">
+                <table class="tup-table" ref="__datetime_table">
                     <thead>
                         <tr>
                             <th>日</th>
@@ -46,6 +46,10 @@ export default {
   methods: {
     click: function (date) {
       this.show = true
+      this.$nextTick(() => {
+        let width = this.$refs.__datetime_table.offsetWidth
+        this.$refs.__datetime_title.style.width = width + 'px'
+      })
     },
     clickDay: function (date) {
       if (!this.isThisMonth(date)) return
@@ -65,12 +69,10 @@ export default {
 
 <style scoped>
 .__datetime {
-  width: 224px;
-  margin-left: 10px;
+  position: absolute;
 }
 .__datetime_title {
   text-align: center;
-  width: 100%;
   font-size: 20px;
   line-height: 30px;
   height: 30px;
