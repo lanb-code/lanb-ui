@@ -6,6 +6,7 @@ import router from './router'
 /* eslint-disable */
 import $ from 'jquery'
 import './register'
+import './analog.js'
 
 Vue.config.productionTip = false
 

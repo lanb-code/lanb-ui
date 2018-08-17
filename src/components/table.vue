@@ -31,9 +31,9 @@
       </tbody>
     </table>
     <div v-if="paging" :key="2" class="paging-box">
-      <ibutton  @click.native="prePage" text="上一页"></ibutton>
+      <ibutton @click.native="prePage" text="上一页"></ibutton>
       <input class="tup-input" type="text" :value="page" />
-      <ibutton  @click.native="nextPage" text="下一页"></ibutton>
+      <ibutton @click.native="nextPage" text="下一页"></ibutton>
     </div>
   </transition-group>
 </template>
@@ -60,7 +60,7 @@ export default {
 
     url: {
       type: String,
-      default: ''
+      default: ""
     }, // 请求地址
 
     paging: {
@@ -105,121 +105,124 @@ export default {
 
     dblclick: {
       type: Function,
-      default: function (index, col) {
-        console.log('dblclick')
+      default: function(index, col) {
+        console.log("dblclick");
         // console.log('index:' + index + '\r\ncol:' + JSON.stringify(col));
       }
     },
 
     click: {
       type: Function,
-      default: function (index, col) {
-        console.log('click')
+      default: function(index, col) {
+        console.log("click");
         // console.log('index:' + index + '\r\ncol:' + JSON.stringify(col));
       }
     }
   },
 
-  data () {
+  data() {
     return {
       total: 0, // 最大行数
 
       page: 1, // 当前页码
 
-      parm: '&rows=10&page=1',
+      parm: "&rows=10&page=1",
 
       checkAll: false // 是否选中所有
-    }
+    };
   },
 
   computed: {
-    maxPage () {
-      return Math.floor(this.total / this.rows)
+    maxPage() {
+      return Math.floor(this.total / this.rows);
     },
 
-    pageInfo () {
-      return '&page=' + this.page + '&rows=' + this.rows
+    pageInfo() {
+      return "&page=" + this.page + "&rows=" + this.rows;
     },
 
     // 当前数据
-    currData () {
-      var total = this.data.length
-      if (total < this.rows) return this.data
+    currData() {
+      var total = this.data.length;
+      if (total < this.rows) return this.data;
       else {
-        var start = (this.page - 1) * this.rows
-        var stop = this.page * this.rows
-        return this.data.slice(start, stop)
+        var start = (this.page - 1) * this.rows;
+        var stop = this.page * this.rows;
+        return this.data.slice(start, stop);
       }
     }
   },
   methods: {
-    selectAll () {
+    selectAll() {
       if (this.checkAll) {
         // $(this.$refs.checkbox).removeAttr('checked')
-        console.log(this.$refs.checkbox)
+        console.log(this.$refs.checkbox);
         /* eslint-disable */
-        $(this.$refs.checkbox).prop('checked', false)
+        $(this.$refs.checkbox).prop("checked", false);
         this.checkAll = false;
       } else {
         /* eslint-disable */
-        $(this.$refs.checkbox).prop('checked', true)
-        this.checkAll = true
+        $(this.$refs.checkbox).prop("checked", true);
+        this.checkAll = true;
       }
     },
 
     // 双击事件
-    dblclickMethod (index, col) {
-      this.dblclick(index, col)
+    dblclickMethod(index, col) {
+      this.dblclick(index, col);
     },
 
     // 单击事件
-    clickMethod (index, col) {
-      this.click(index, col)
+    clickMethod(index, col) {
+      this.click(index, col);
     },
 
     // 加载数据
-    loadData () {
-      var self = this
-      self.$emit('update:ok', false)
+    loadData() {
+      var self = this;
+      self.$emit('update:ok', false);
       /* eslint-disable */
       $.ajax({
         url: this.url,
-        type: 'post',
+        type: 'get',
         data: self.pageInfo,
         dataType: 'json',
-        success: function (result) {
+        success: function(result) {
+          console.log(data)
           var data = result.rows || result
+          console.log(data)
           self.$emit('update:data', data)
           self.$emit('update:ok', true)
           self.total = result.total || 0
         },
-        error: function (result) {}
-      })
+        error: function(result) {
+        }
+      });
     },
 
     // 上一页
-    prePage () {
-      if (this.page - 1 <= 0) return
-      this.page = this.page - 1
-      this.loadData()
+    prePage() {
+      if (this.page - 1 <= 0) return;
+      this.page = this.page - 1;
+      this.loadData();
     },
 
     // 下一页
-    nextPage () {
-      if (this.page + 1 > this.maxPage + 1) return
-      this.page = this.page + 1
-      this.loadData()
+    nextPage() {
+      if (this.page + 1 > this.maxPage + 1) return;
+      this.page = this.page + 1;
+      this.loadData();
     }
   },
 
-  mounted () {
-    if (this.url !== '') {
-      this.loadData()
+  mounted() {
+    if (this.url !== "") {
+      this.loadData();
     } else {
-      this.$emit('update:ok', true)
+      this.$emit("update:ok", true);
     }
   }
-}
+};
 </script>
 
 <style scoped>

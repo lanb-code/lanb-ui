@@ -7,7 +7,7 @@ export default {
   name: 'Select',
   data () {
     return {
-      url: 'http://localhost:1234/test/queryPage'
+      url: '?url=http://localhost:1234/test/queryPage'
     }
   }
 }

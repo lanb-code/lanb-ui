@@ -25,16 +25,12 @@ export default {
           title: '测试名'
         },
         {
-          field: 'createTime',
-          title: '创建时间'
-        },
-        {
           field: null,
           title: '操作',
           name: 'oper'
         }
       ],
-      url: 'http://localhost:1234/test/queryPage',
+      url: '?url=http://localhost:1234/test/queryPage',
       data: [],
       ok: false
     }

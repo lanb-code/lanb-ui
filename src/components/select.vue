@@ -28,7 +28,7 @@ export default {
       /* eslint-disable */
       $.ajax({
         url: this.url,
-        type: 'post',
+        type: 'get',
         dataType: 'json',
         success (result) {
           if (typeof result.rows !== 'undefined') self.data = result.rows
