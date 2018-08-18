@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" class="tup-input" v-model="day" @click="click" />
+        <input type="text" class="tup-input" ref="__datetime_input" v-model="day" @focus="focus" @blur="blur" />
         <div class="__datetime" v-if="show">
             <div class="__datetime_title" ref="__datetime_title">{{month.year}}&nbsp;{{month.month + 1}}</div>
             <div class="__datetime_body" ref="__datetime_body">
@@ -18,7 +18,7 @@
                     </thead>
                     <tbody>
                         <tr :key="row.id" v-for="row in data">
-                            <td :key="line.id" :class="{__not_this_month: !isThisMonth(line._d)}" @click="clickDay(line._d)" v-for="line in row">
+                            <td :key="line.id" :class="{__not_this_month: !isThisMonth(line._d)}" @mousedown="selectDay(line._d)" v-for="line in row">
                               {{line._d.getDate()}}
                             </td>
                         </tr>
@@ -44,14 +44,17 @@ export default {
     }
   },
   methods: {
-    click: function (date) {
+    blur: function (e) {
+      this.show = false
+    },
+    focus: function (e) {
       this.show = true
       this.$nextTick(() => {
         let width = this.$refs.__datetime_table.offsetWidth
         this.$refs.__datetime_title.style.width = width + 'px'
       })
     },
-    clickDay: function (date) {
+    selectDay: function (date) {
       if (!this.isThisMonth(date)) return
       this.day = df(date, 'YYYY-MM-DD')
       this.show = false
