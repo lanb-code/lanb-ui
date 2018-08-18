@@ -4,7 +4,7 @@
         <div class="__datetime" v-if="show">
             <div class="__datetime_title" ref="__datetime_title">{{month.year}}&nbsp;{{month.month + 1}}</div>
             <div class="__datetime_body" ref="__datetime_body">
-                <table class="tup-table" ref="__datetime_table">
+                <table class="tup-table __datetime_table" ref="__datetime_table">
                     <thead>
                         <tr>
                             <th>日</th>
@@ -84,7 +84,18 @@ export default {
   background-color: rgb(250, 250, 250);
 }
 
+.__datetime_table td {
+  text-align: center;
+}
+
+.__datetime_table td:hover {
+  cursor: pointer;
+  background-color: rgb(250, 250, 250);
+}
+
 .__not_this_month {
   color: #d2d2d2;
+  cursor: not-allowed !important;
+  background-color: #ffffff !important;
 }
 </style>
