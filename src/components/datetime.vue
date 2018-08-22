@@ -18,8 +18,8 @@
                     </thead>
                     <tbody>
                         <tr :key="row.id" v-for="row in data">
-                            <td :key="line.id" :class="{__not_this_month: !isThisMonth(line._d)}" @mousedown="selectDay(line._d)" v-for="line in row">
-                              {{line._d.getDate()}}
+                            <td :key="col.id" :class="{__not_this_month: !isThisMonth(col._d)}" @mousedown="selectDay(col._d)" v-for="col in row">
+                              {{col._d.getDate()}}
                             </td>
                         </tr>
                     </tbody>
@@ -76,6 +76,7 @@ export default {
 }
 
 .__datetime_input {
+  transition: all 0.5s;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
