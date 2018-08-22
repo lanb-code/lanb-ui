@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin: 5px;">
       <idatetime></idatetime>
       <div style="margin-top: 5px;">覆盖测试</div>
     </div>

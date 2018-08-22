@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" class="tup-input" ref="__datetime_input" v-model="day" @focus="focus" @blur="blur" />
+        <input type="text" class="tup-input __datetime_input" placeholder="请选择时间..." autocomplete="off" ref="__datetime_input" readonly="readonly" v-model="day" @focus="focus" @blur="blur" />
         <div class="__datetime" v-if="show">
             <div class="__datetime_title" ref="__datetime_title">{{month.year}}&nbsp;{{month.month + 1}}</div>
             <div class="__datetime_body" ref="__datetime_body">
@@ -74,6 +74,19 @@ export default {
 .__datetime {
   position: absolute;
 }
+
+.__datetime_input {
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.__datetime_input:hover,
+.__datetime_input:focus {
+  border: 1px solid #57a3f3;
+  cursor: pointer;
+}
+
 .__datetime_title {
   text-align: center;
   font-size: 20px;
