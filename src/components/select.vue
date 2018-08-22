@@ -95,7 +95,6 @@ export default {
 }
 
 .__dropdown_item:hover {
-  background-color: #333333;
-  color: #ffffff;
+  background-color: rgb(250, 250, 250);
 }
 </style>

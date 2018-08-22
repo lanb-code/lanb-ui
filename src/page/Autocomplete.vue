@@ -1,6 +1,6 @@
 <template>
   <div class="autocomplete">
-    <iautocomplete></iautocomplete>
+    <iautocomplete :list="list"></iautocomplete>
     <div style="margin-top: 10px;">覆盖测试</div>
   </div>
 </template>
@@ -9,7 +9,24 @@
 export default {
   data () {
     return {
-      show: false
+      show: false,
+      list: [
+        {
+          value: '中文'
+        },
+        {
+          value: 'aaaa'
+        },
+        {
+          value: 'aa'
+        },
+        {
+          value: 'bbb'
+        },
+        {
+          value: 'ccc'
+        }
+      ]
     }
   }
 }

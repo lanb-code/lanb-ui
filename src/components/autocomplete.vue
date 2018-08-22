@@ -12,31 +12,17 @@
 <script>
 export default {
   name: 'iautocomplete',
+  props: {
+    list: []
+  },
   data () {
     return {
       show: false,
-      key: '',
-      list: [
-        {
-          value: '中文'
-        },
-        {
-          value: 'aaaa'
-        },
-        {
-          value: 'aa'
-        },
-        {
-          value: 'bbb'
-        },
-        {
-          value: 'ccc'
-        }
-      ]
+      key: ''
     }
   },
   methods: {
-    blur (e) {},
+    blur (e) { },
     click (e) {
       var target = e.target
       var value = target.innerText
