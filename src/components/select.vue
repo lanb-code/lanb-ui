@@ -82,6 +82,8 @@ export default {
 .__select_dropdown {
   position: absolute;
   display: none;
+  z-index: 1001;
+  background-color: #ffffff;
   border: 0px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
     0 0 0 1px rgba(0, 0, 0, 0.08);
