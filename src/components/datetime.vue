@@ -34,7 +34,7 @@ import moment from 'moment'
 import Month from 'calendar-months'
 var df = require('date-formatter')
 export default {
-  name: '',
+  name: 'idatetime',
   data () {
     return {
       show: false,

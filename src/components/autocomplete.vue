@@ -13,7 +13,9 @@
 export default {
   name: 'iautocomplete',
   props: {
-    list: []
+    list: {
+      type: Array
+    }
   },
   data () {
     return {

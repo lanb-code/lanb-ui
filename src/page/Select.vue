@@ -7,7 +7,6 @@
 
 <script>
 export default {
-  name: 'Select',
   data () {
     return {
       url: '?url=http://localhost:1234/test/queryPage'

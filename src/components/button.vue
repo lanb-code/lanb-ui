@@ -5,6 +5,7 @@
 <script>
 /* <div class="tup-btn" type="button">{{text}}</div> */
 export default {
+  name: 'ibutton',
   props: {
     text: {
       type: String,

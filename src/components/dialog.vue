@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name: 'idialog',
   props: {
     show: {
       type: Boolean,

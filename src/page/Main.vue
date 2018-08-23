@@ -19,6 +19,9 @@
             <li>
                 <router-link to="/idatetime">时间组件</router-link>
             </li>
+            <li>
+                <router-link to="/itab">选项卡</router-link>
+            </li>
         </ul>
     </div>
 </template>
