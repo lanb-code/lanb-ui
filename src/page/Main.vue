@@ -22,6 +22,9 @@
             <li>
                 <router-link to="/itab">选项卡</router-link>
             </li>
+            <li>
+                <router-link to="/icalendar">日历</router-link>
+            </li>
         </ul>
     </div>
 </template>

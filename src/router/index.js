@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Calendar from '@/page/Calendar'
 import Table from '@/page/Table'
 import Select from '@/page/Select'
 import Dialog from '@/page/Dialog'
@@ -49,6 +50,11 @@ export default new Router({
       path: '/itab',
       name: 'Tab',
       component: Tab
+    },
+    {
+      path: './icalendar',
+      name: 'Calendar',
+      component: Calendar
     }
   ]
 })

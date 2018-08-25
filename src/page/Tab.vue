@@ -1,11 +1,13 @@
 <template>
-    <ibutton text="按钮"></ibutton>
+  <itab></itab>
 </template>
 
 <script>
 export default {
   data () {
-    return {}
+    return {
+
+    }
   }
 }
 </script>

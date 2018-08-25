@@ -1,5 +1,7 @@
 <template>
-    <ibutton text="按钮"></ibutton>
+    <div>
+      <icalendar></icalendar>
+    </div>
 </template>
 
 <script>
