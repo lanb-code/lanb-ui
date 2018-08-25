@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page">
       <icalendar></icalendar>
     </div>
 </template>
@@ -13,4 +13,9 @@ export default {
 </script>
 
 <style scoped>
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 </style>

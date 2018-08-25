@@ -52,7 +52,7 @@ export default new Router({
       component: Tab
     },
     {
-      path: './icalendar',
+      path: '/icalendar',
       name: 'Calendar',
       component: Calendar
     }
