@@ -1,7 +1,10 @@
 <template>
   <div>
-    <iselect :url="url" value="testId" name="testName" tip="--请选择选项--"></iselect>
-    <div style="margin-top: 5px;">覆盖测试</div>
+    <iheader title="选择下拉"></iheader>
+    <div class="select">
+      <iselect :url="url" value="testId" name="testName" tip="--请选择选项--"></iselect>
+      <div style="margin-top: 5px;">覆盖测试</div>
+    </div>
   </div>
 </template>
 
@@ -17,4 +20,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.select {
+  padding: 10px;
+}
 </style>

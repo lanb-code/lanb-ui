@@ -1,5 +1,8 @@
 <template>
-    <ibutton text="按钮"></ibutton>
+    <div>
+      <iheader title="按钮"></iheader>
+      <ibutton text="按钮"></ibutton>
+    </div>
 </template>
 
 <script>

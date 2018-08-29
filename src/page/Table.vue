@@ -1,5 +1,6 @@
 <template>
   <div class="table">
+    <iheader title="表格"></iheader>
     <itable :toolBar="true" id="itable" :checkbox="true" :data.sync="data" :url="url" :ok.sync="ok" :thead="thead" :paging="true" :rownumbers="true">
       <!-- 自定义操作部分     -->
       <template slot="oper" slot-scope="props">
@@ -39,7 +40,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.table {
-  padding: 10px;
-}
 </style>

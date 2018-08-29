@@ -1,5 +1,6 @@
 <template>
     <div class="page">
+      <iheader title="日历"></iheader>
       <icalendar></icalendar>
     </div>
 </template>

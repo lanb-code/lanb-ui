@@ -1,11 +1,7 @@
 <template>
   <div class="page">
 
-        <header>
-          <a href="#"><span class="iconfont icon-left"></span></a>
-          <a href="#" class="title">标题</a>
-          <a href="#"><span class="iconfont icon-gengduo"></span></a>
-        </header>
+        <iheader title="主页"></iheader>
         <main class="main tup-list">
           <ul>
               <li>

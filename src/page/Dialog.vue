@@ -1,5 +1,6 @@
 <template>
   <div>
+    <iheader title="对话框"></iheader>
     <idialog :show.sync="show">
       <div>测试</div>
       <div>测试</div>

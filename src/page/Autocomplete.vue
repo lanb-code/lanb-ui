@@ -1,7 +1,10 @@
 <template>
-  <div class="autocomplete">
+  <div>
+    <iheader title="自动完成"></iheader>
+    <div class="autocomplete">
     <iautocomplete :list="list"></iautocomplete>
     <div style="margin-top: 10px;">覆盖测试</div>
+  </div>
   </div>
 </template>
 

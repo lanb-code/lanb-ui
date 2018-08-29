@@ -1,5 +1,8 @@
 <template>
-  <itab></itab>
+  <div>
+    <iheader title="选项卡"></iheader>
+    <itab></itab>
+  </div>
 </template>
 
 <script>
