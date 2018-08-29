@@ -13,6 +13,7 @@ export default {
 <style>
 @import './assets/reset.css';
 @import './assets/tup.css';
+@import url(//at.alicdn.com/t/font_718424_1sez2i55t8sh.css);
 
 [v-cloak] {
   display: none !important;
