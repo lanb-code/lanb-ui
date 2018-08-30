@@ -67,10 +67,6 @@ export default {
 </script>
 
 <style scoped>
-.tup-select {
-  display: none;
-}
-
 .select__input {
   padding: 9px;
   border: 0px;

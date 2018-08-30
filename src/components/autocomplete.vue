@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input class="tup-input autocomplete__search" v-model="key" @input="input" @keyup.enter="enter" @blur="blur" />
+    <input class="tup-input autocomplete__search" v-model="key" @input="input" />
     <ul class="autocomplete__list" v-if="show">
       <li class="list-item" :key="data.value" v-for="data in list" @click="click" :class="{'autocomplete__matched': data.matched}">
         {{data.value}}
@@ -24,7 +24,6 @@ export default {
     }
   },
   methods: {
-    blur (e) { },
     click (e) {
       var target = e.target
       var value = target.innerText
@@ -33,30 +32,30 @@ export default {
         this.show = false
       }
     },
-    enter (e) {
-      console.log(e.target.value)
-    },
     input (e) {
+
       if (this.key === '') {
         this.show = false
         return
       }
-      var matchCoun = 0
+
+      var matchCount = 0
 
       for (let i = 0; i < this.list.length; i++) {
         this.list[i].matched = false
         var data = this.list[i]
         if (data.value.indexOf(this.key) !== -1) {
-          matchCoun++
+          matchCount++
           this.list[i].matched = true
         }
       }
 
-      if (matchCoun > 0) {
+      if (matchCount > 0) {
         this.show = true
       } else {
         this.show = false
       }
+      
     }
   }
 }

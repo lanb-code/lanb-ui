@@ -17,7 +17,6 @@
             :key="col.id" 
             :class="{not_this_month: !isThisMonth(col._d)}" 
             v-for="col in row"
-            @mousedown="onMousedown"
           >
             <i class="iconfont icon-close"></i>
             <span class="dayLabel">
@@ -48,17 +47,9 @@ export default {
     },
     isToday (date) {
       return false
-    },
-    onMousedown (e) {
-      this.$router.push({ name: 'ScheduleHome' })
-      // console.log(e)
-    },
-    returnEvent (e) {
-      this.$router.push({ name: 'Welcome' })
     }
   },
   created () {
-    console.log(1)
     this.month = Month.create(moment())
     this.days = this.month.calendarWeeks()
   }
