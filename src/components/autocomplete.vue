@@ -1,8 +1,8 @@
 <template>
   <div>
-    <input class="tup-input search" v-model="key" @input="input" @keyup.enter="enter" @blur="blur" />
-    <ul class="list" v-if="show">
-      <li class="list-item" :key="data.value" v-for="data in list" @click="click" :class="{matched: data.matched}">
+    <input class="tup-input autocomplete__search" v-model="key" @input="input" @keyup.enter="enter" @blur="blur" />
+    <ul class="autocomplete__list" v-if="show">
+      <li class="list-item" :key="data.value" v-for="data in list" @click="click" :class="{'autocomplete__matched': data.matched}">
         {{data.value}}
       </li>
     </ul>
@@ -63,11 +63,11 @@ export default {
 </script>
 
 <style scoped>
-.search {
+.autocomplete__search {
   width: 100px;
 }
 
-.list {
+.autocomplete__list {
   background-color: #ffffff;
   position: fixed;
   margin-top: 1px;
@@ -76,7 +76,7 @@ export default {
   width: 118px;
 }
 
-.matched {
+.autocomplete__matched {
   background-color: #333333;
   color: #ffffff;
 }

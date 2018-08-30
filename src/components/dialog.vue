@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="dialog">
-      <div v-if="show" class="dialog-inner">
+      <div v-if="show" class="dialog__inner">
         <slot></slot>
       </div>
     </div>
@@ -69,7 +69,7 @@ export default {
   transform: translate3d(-50%, -50%, 0);
 }
 
-.dialog-inner {
+.dialog__inner {
   position: relative;
   background: #ffffff;
   -webkit-backface-visibility: hidden;

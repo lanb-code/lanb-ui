@@ -1,9 +1,9 @@
 <template>
   <div v-if="ok">
-    <div class="__select">
-      <input v-model="selectName" type="text" value="" :placeholder="tip" readonly="readonly" class="__select_input" ref="__select_input" @mousedown="mousedown" @blur="blur" />
-      <div class="__select_dropdown" ref="__select_dropdown">
-        <div class="__dropdown_item" :key="getValue(col)" v-for="col in data" :value="getValue(col)" @mousedown="clickItem(col)">{{getName(col)}}</div>
+    <div class="select">
+      <input v-model="selectName" type="text" value="" :placeholder="tip" readonly="readonly" class="select__input" ref="select__input" @mousedown="mousedown" @blur="blur" />
+      <div class="select__dropdown" ref="select__dropdown">
+        <div class="dropdown__item" :key="getValue(col)" v-for="col in data" :value="getValue(col)" @mousedown="clickItem(col)">{{getName(col)}}</div>
       </div>
     </div>
   </div>
@@ -49,12 +49,12 @@ export default {
       else return col[this.name]
     },
     mousedown (e) {
-      let width = this.$refs.__select_input.offsetWidth
-      this.$refs.__select_dropdown.style.width = width + 'px'
-      this.$refs.__select_dropdown.style.display = 'block'
+      let width = this.$refs.select__input.offsetWidth
+      this.$refs.select__dropdown.style.width = width + 'px'
+      this.$refs.select__dropdown.style.display = 'block'
     },
     blur (e) {
-      this.$refs.__select_dropdown.style.display = 'none'
+      this.$refs.select__dropdown.style.display = 'none'
     },
     clickItem (col) {
       this.selectName = col[this.name]
@@ -71,7 +71,7 @@ export default {
   display: none;
 }
 
-.__select_input {
+.select__input {
   padding: 9px;
   border: 0px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
@@ -79,7 +79,7 @@ export default {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
-.__select_dropdown {
+.select__dropdown {
   position: absolute;
   display: none;
   z-index: 1001;
@@ -90,11 +90,11 @@ export default {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
-.__dropdown_item {
+.dropdown__item {
   padding: 9px;
 }
 
-.__dropdown_item:hover {
+.dropdown__item:hover {
   background-color: rgb(250, 250, 250);
 }
 </style>

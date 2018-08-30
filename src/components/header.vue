@@ -1,9 +1,9 @@
 <template>
   
-  <header>
-    <a @click="back"><span class="iconfont icon-left"></span></a>
-    <a href="#">{{title}}</a>
-    <a><span class="iconfont icon-gengduo"></span></a>
+  <header class="header">
+    <a class="header__item" @click="back"><span class="iconfont icon-left"></span></a>
+    <a class="header__item" href="#">{{title}}</a>
+    <a class="header__item"><span class="iconfont icon-gengduo"></span></a>
   </header>
 
 </template>
@@ -21,7 +21,7 @@ export default {
     return {}
   },
   methods: {
-    back() {
+    back () {
       window.history.go(-1)
     }
   }
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-header {
+.header {
   width: 100%;
   justify-content: space-between;
   display: flex;
@@ -38,7 +38,7 @@ header {
   line-height: 40px;
 }
 
-header a {
+header__item {
   color: #ffffff;
   font-size: 14px;
 }
