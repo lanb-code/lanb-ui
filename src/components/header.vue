@@ -38,7 +38,7 @@ export default {
   line-height: 40px;
 }
 
-header__item {
+.header__item {
   color: #ffffff;
   font-size: 14px;
 }
