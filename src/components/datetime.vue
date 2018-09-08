@@ -35,11 +35,16 @@ import Month from 'calendar-months'
 var df = require('date-formatter')
 export default {
   name: 'idatetime',
+  props: {
+    day: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       show: false,
       data: [],
-      day: '',
       month: {}
     }
   },
@@ -56,7 +61,7 @@ export default {
     },
     selectDay: function (date) {
       if (!this.isThisMonth(date)) return
-      this.day = df(date, 'YYYY-MM-DD')
+      this.$emit('update:day', df(date, 'YYYY-MM-DD'))
       this.show = false
     },
     isThisMonth (date) {
