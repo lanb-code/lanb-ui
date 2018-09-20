@@ -98,6 +98,10 @@ footer a {
   background-color: #f7f7fa;
 }
 
+footer p {
+  margin: 8px;
+}
+
 footer a:hover {
   color: #96bda8;
 }
